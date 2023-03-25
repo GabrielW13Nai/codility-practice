@@ -20,14 +20,14 @@ def characters counter
     counter.each do |word|
         i=0
         arr = []
-        p  word
         until i == word.length
-            arr << word[i].split
+            arr << word[i]
             i+=1
         end
-        p arr.tally
+        p arr.group_by{|v| v}.map{|k,v| [k, v.size]}
     end
 
 end
 
 characters ["building"]
+characters ["New World Order"]
